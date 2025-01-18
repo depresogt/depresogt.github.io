@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cosmetic Giver</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .hidden {
+            display: none;
+        }
+        #result {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Cosmetic Giver</h1>
+    <label for="gameTitle">Game Title:</label>
+    <input type="text" id="gameTitle" placeholder="Enter game title" oninput="checkFields()"><br><br>
+
+    <label for="playerID">Player ID:</label>
+    <input type="text" id="playerID" placeholder="Enter player ID" oninput="checkFields()"><br><br>
+
+    <label for="cosmeticID">Cosmetic ID:</label>
+    <input type="text" id="cosmeticID" placeholder="Enter cosmetic ID" oninput="checkFields()"><br><br>
+
+    <div id="giveButton" class="hidden">
+        <button onclick="giveCosmetic()">Give Cosmetic</button>
+    </div>
+
+    <div id="result" class="hidden"></div>
+
+    <script>
+        // Function to check if all fields are filled and show the button
+        function checkFields() {
+            const gameTitle = document.getElementById('gameTitle').value;
+            const playerID = document.getElementById('playerID').value;
+            const cosmeticID = document.getElementById('cosmeticID').value;
+
+            const giveButton = document.getElementById('giveButton');
+
+            // Show the "Give Cosmetic" button only if all fields are filled
+            if (gameTitle && playerID && cosmeticID) {
+                giveButton.classList.remove('hidden');
+            } else {
+                giveButton.classList.add('hidden');
+            }
+        }
+
+        // Function to simulate giving the cosmetic item
+        function giveCosmetic() {
+            const resultDiv = document.getElementById('result');
+            resultDiv.classList.remove('hidden');
+            resultDiv.innerHTML = 'Giving item...';
+
+            // Simulate a short delay (e.g., like an API call) before showing the result
+            setTimeout(function() {
+                resultDiv.innerHTML = 'Item given successfully!';
+            }, 2000); // 2 seconds delay
+        }
+    </script>
+</body>
+</html>
