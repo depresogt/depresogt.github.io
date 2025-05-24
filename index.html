@@ -13,9 +13,12 @@
 <table>
 <head>
 
+<label class="slider">
+  <input type="range" class="level" min="0" max="1" step="0.01" value="0.5">
+</label>
 
 <body style="background-color: rgb(44, 43, 43);">
-<h1 style="color: rgb(2, 6, 255);">my home made spotify<h1>
+<h1 style="color: rgb(78, 81, 255);">my home made spotify<h1>
   <button class="button" onclick="yourtolate()">Nope your too late i already died</button>
   <audio id="audioPlayer" src="yourtolate.mp3"></audio>
   <script src="yourtolatejs.js"></script>
@@ -30,6 +33,22 @@
 <button class="button" onclick="lookingoutforuuuu()">i should stop looking out for you</button>
 <audio id="audioPlayer2" src="looking-out-for-u.mp3"></audio>
 <script src="lookingoutforu111.js"></script>
+
+<button class="button3" onclick="DarkThoughts()">Dark Thoughts</button>
+<audio id="audioPlayer3" src="Dark Thoughts.mp3"></audio>
+<script src="DarkThoughtsjs.js"></script>
+
+<script>
+  const volumeSlider = document.querySelector('.level');
+
+  volumeSlider.addEventListener('input', () => {
+    const allAudio = document.querySelectorAll('audio');
+    allAudio.forEach(audio => {
+      audio.volume = volumeSlider.value;
+    });
+  });
+</script>
+
 
 <body>
 
