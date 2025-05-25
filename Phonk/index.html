@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+<meta name="descrition" content="my homemade spotify">
+<meta name="keywords" content="depreso tuff phonk">
+<meta name="auther" content="depreso">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="Stylesheet" href="style.css">
+
+<table style="background-color: hsl(0, 96%, 27%);">
+<table>
+<head>
+
+<label class="slider">
+  <input type="range" class="level" min="0" max="1" step="0.01" value="0.5">
+</label>
+<body style="background-color: rgb(35, 0, 0);">
+<h1 style="color: rgb(78, 81, 255);"> <h1></h1>
+<button class="button3" onclick="basterd()">LOVELY BASTARDS</button>
+<audio id="phonk1" src="LOVELY BASTARDS YATASHIGANG ZWE1HVNDXR.mp3"></audio>
+<script src="loveleybaster.js"></script>
+
+<script>
+  const volumeSlider = document.querySelector('.level');
+
+  volumeSlider.addEventListener('input', () => {
+    const allAudio = document.querySelectorAll('audio');
+    allAudio.forEach(audio => {
+      audio.volume = volumeSlider.value;
+    });
+  });
+</script>
+
+
+<body>
+
+</html>
