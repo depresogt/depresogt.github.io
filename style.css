@@ -64,3 +64,11 @@ button {
       --btn-color: rgb(100, 61, 136);
       border: 0.25em solid var(--glow-color);
 }
+
+.btnPhonk {
+  position: fixed;
+  bottom: 30px;
+  left:  50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+}
